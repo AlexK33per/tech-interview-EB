@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
 const cors = require('cors');
+const events = require('./routes/eventRouter');
 
 const app = express();
 const server = http.createServer(app);
@@ -23,6 +24,8 @@ mongoose.connection.once('open', function () {
     console.log("MongoDB database connection established successfully");
 });
 
+
+app.use('/events', events);
 app.get('/', function (req, res) {
     res.status(200).send(
         {
