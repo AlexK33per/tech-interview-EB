@@ -25,18 +25,22 @@ const eventSchema = new Schema({
         required: true,
         unique: true
     },
+    location: {
+        type: String,
+        required: true,
+    },
     tickets: [{
-            type: ticketSchema,
-            default: []
+        type: ticketSchema,
+        default: []
     }],
     start_date: {
         type: Date,
-        //required: true,
+        required: true,
         min: Date.now()
     },
     end_date: {
         type: Date,
-        //required: true
+        required: true
     },
     description: {
         type: String,
