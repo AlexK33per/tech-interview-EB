@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const http = require('http');
 const cors = require('cors');
 const events = require('./routes/eventRouter');
+require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const uri = 'mongodb://localhost:27017/events';
+const uri = process.env.MONGO_URI;
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

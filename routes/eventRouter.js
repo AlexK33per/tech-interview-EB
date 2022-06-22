@@ -1,10 +1,13 @@
 const { Router } = require('express');
 require('../controller/eventController');
-const {getAllEvents, postAnEvent} = require("../controller/eventController");
+const eventRouter = require("../controller/eventController");
 
 const router = Router();
 
-router.get('/', getAllEvents);
-router.post('/', postAnEvent);
+router.get('/', eventRouter.getAllEvents);
+router.get('/sf', eventRouter.getEventFromSanFrancisco);
+router.get('/online', eventRouter.getOnlineEvents);
+router.get('/physical', eventRouter.getPhysicalEvents);
+router.post('/', eventRouter.postAnEvent);
 
 module.exports = router;
