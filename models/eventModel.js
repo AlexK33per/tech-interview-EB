@@ -18,7 +18,6 @@ const ticketSchema = new Schema(
     }
 );
 
-
 const eventSchema = new Schema({
     name: {
         type: String,
@@ -28,6 +27,11 @@ const eventSchema = new Schema({
     location: {
         type: String,
         required: true,
+    },
+    isOnline: {
+        type: Boolean,
+        required: true,
+        default: null
     },
     tickets: [{
         type: ticketSchema,
