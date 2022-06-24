@@ -25,8 +25,8 @@ mongoose.connection.once('open', function () {
     console.log("MongoDB database connection established successfully");
 });
 
-
 app.use('/events', events);
+
 app.get('/', function (req, res) {
     res.status(200).send(
         {
@@ -42,7 +42,7 @@ async function setup_and_launch_server(app) {
         res.status(404).send();
     });
 
-    server.listen(process.env.PORT || 3000, function () {
+    server.listen(process.env.PORT || 3001, function () {
         console.log('Listening');
     });
 }

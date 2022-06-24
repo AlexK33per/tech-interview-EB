@@ -14,6 +14,10 @@ const ticketSchema = new Schema(
         available: {
             type: Boolean,
             required: true
+        },
+        description: {
+            type: String,
+            default: "No description provided."
         }
     }
 );

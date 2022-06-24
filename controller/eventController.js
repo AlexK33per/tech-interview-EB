@@ -14,7 +14,7 @@ function getAllEvents(req, res) {
 // GET - All events that are online
 
 function getOnlineEvents(req, res) {
-    event.find({})
+    event.find({location: "San Francisco, USA"})
         .where("isOnline").equals(true)
         .exec((err, events) => {
             if(err) {
@@ -27,7 +27,7 @@ function getOnlineEvents(req, res) {
 // GET - All events that are phisical
 
 function getPhysicalEvents(req, res) {
-    event.find({})
+    event.find({location: "San Francisco, USA"})
         .where("isOnline").equals(false)
         .exec((err, events) => {
             if(err) {

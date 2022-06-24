@@ -4,4 +4,4 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # Node.JS
-/node_modules
+../node_modules
