@@ -63,10 +63,20 @@ function postAnEvent(req, res) {
     });
 }
 
+function getEventFromId(req, res) {
+    event.findById(req.params.id).exec((err, eventData) => {
+        if (err) {
+            res.status(404).send(err.msg);
+        }
+        return res.status(200).send(eventData);
+    })
+}
+
 module.exports = {
     getAllEvents,
     getEventFromSanFrancisco,
     getPhysicalEvents,
     getOnlineEvents,
-    postAnEvent
+    postAnEvent,
+    getEventFromId
 };

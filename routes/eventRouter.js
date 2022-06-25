@@ -9,5 +9,6 @@ router.get('/sf', eventRouter.getEventFromSanFrancisco);
 router.get('/online', eventRouter.getOnlineEvents);
 router.get('/physical', eventRouter.getPhysicalEvents);
 router.post('/', eventRouter.postAnEvent);
+router.get('/:id', eventRouter.getEventFromId);
 
 module.exports = router;
